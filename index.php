@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>chleb</title>
     <link rel="stylesheet" href="style.css">
 </head>
