@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: black;
 }
 
 body {
@@ -31,7 +30,7 @@ header {
     padding: 20px;
     border: 3px solid #0077cc;
     border-radius: 8px;
-    background-color: #ffffff;
+    background: linear-gradient(to right, #060606, #272727);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin: 20px;
 }
@@ -47,7 +46,7 @@ aside {
 main {
     padding: 20px;
     width: 75%;
-    background-color: #f9fbfd;
+    background: linear-gradient(to right, #030303, #242424);
     border-radius: 8px;
 }
 
