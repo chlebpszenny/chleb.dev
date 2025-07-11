@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        chleb.dev
+        <h1>chleb.dev</h1>
     </header>
     <div class="container">
         <aside>
