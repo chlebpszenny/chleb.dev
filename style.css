@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f8ff;
+    background: linear-gradient(to right, #030303, #242424);
     color: #222;
 }
 
@@ -30,7 +30,7 @@ header {
     padding: 20px;
     border: 3px solid #0077cc;
     border-radius: 8px;
-    background: linear-gradient(to right, #060606, #272727);
+    background: linear-gradient(to right, #090909, #303030);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin: 20px;
 }
@@ -46,7 +46,7 @@ aside {
 main {
     padding: 20px;
     width: 75%;
-    background: linear-gradient(to right, #030303, #242424);
+    background: linear-gradient(to right, #060606, #272727);
     border-radius: 8px;
 }
 
