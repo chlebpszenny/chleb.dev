@@ -30,13 +30,13 @@ header {
     padding: 20px;
     border: 3px solid #0077cc;
     border-radius: 8px;
-    background: linear-gradient(to right, #090909, #303030);
+    background: linear-gradient(to left, #090909, #303030);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin: 20px;
 }
 
 aside {
-    background-color: #e6f0fa;
+    background-color: #222;
     width: 20%;
     padding: 20px;
     border-radius: 8px;
