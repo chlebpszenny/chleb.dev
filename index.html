@@ -1,75 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>chleb</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    #content {
-      transition: opacity 0.2s;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <title>chleb.dev</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header>
-    <h1>chleb.dev</h1>
+    <h1 class="logo">chleb.dev</h1>
   </header>
-  <div class="container">
+
+  <div class="layout">
     <aside>
-      <ul>
-        <li><a href="#" data-page="home">Main</a></li>
-        <li><a href="#" data-page="abtme">About me</a></li>
-        <li><a href="https://github.com/chlebpszenny/chleb.dev" target="_blank">Look inside</a></li>
-      </ul>
+      <nav>
+        <a href="#" data-page="home" class="nav-link active">Home</a>
+        <a href="#" data-page="about" class="nav-link">About Me</a>
+        <a href="https://github.com/chlebpszenny/chleb.dev" target="_blank" class="nav-link">GitHub</a>
+      </nav>
     </aside>
     <main id="content">
-      <!-- this will load pages/home.html by default -->
-      <h2>website is still in progress!</h2><br>
-      <p>Uhh, hi</p>
-      <p>I paid $12 for this domain, so I might as well use it for something</p>
-      <p>tbh I don't know why I did that</p>
-      <p>ig I'm bored</p>
+      <section class="card">
+        <h3>Welcome 👋</h3>
+        <p>This site is under construction. Stay tuned!</p>
+      </section>
     </main>
   </div>
+
   <footer>
-    <h3>Contact:</h3>
-    <p>Discord: @_chleb</p>
-    <p>Mail: me@chleb.dev</p>
+    <p>Contact: @_chleb | me@chleb.dev</p>
   </footer>
 
-  <script>
-    async function loadPage(page) {
-      const content = document.getElementById("content");
-      content.style.opacity = 0.3;
-
-      try {
-        const res = await fetch(`pages/${page}.html`);
-        if (!res.ok) throw new Error("Not found");
-        const html = await res.text();
-        content.innerHTML = html;
-      } catch {
-        content.innerHTML = "<p>Page not found.</p>";
-      }
-
-      content.style.opacity = 1;
-    }
-
-    document.querySelectorAll("a[data-page]").forEach(link => {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        const page = link.dataset.page;
-        loadPage(page);
-        history.pushState({ page }, "", `#${page}`);
-      });
-    });
-
-    window.addEventListener("popstate", e => {
-      const page = e.state?.page || "home";
-      loadPage(page);
-    });
-
-    const startPage = location.hash.replace("#", "") || "home";
-    if (startPage !== "home") loadPage(startPage);
-  </script>
+  <script src="js/app.js"></script>
 </body>
 </html>
