@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <title>chleb</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    #content {
+      transition: opacity 0.2s;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -12,12 +17,13 @@
   <div class="container">
     <aside>
       <ul>
-        <li><a href="index.html">Main</a></li>
-        <li><a href="abtme.html">About me</a></li>
+        <li><a href="#" data-page="home">Main</a></li>
+        <li><a href="#" data-page="abtme">About me</a></li>
         <li><a href="https://github.com/chlebpszenny/chleb.dev" target="_blank">Look inside</a></li>
       </ul>
     </aside>
-    <main>
+    <main id="content">
+      <!-- this will load pages/home.html by default -->
       <h2>website is still in progress!</h2><br>
       <p>Uhh, hi</p>
       <p>I paid $12 for this domain, so I might as well use it for something</p>
@@ -27,8 +33,43 @@
   </div>
   <footer>
     <h3>Contact:</h3>
-    <p>Discord:    @_chleb</p>
+    <p>Discord: @_chleb</p>
     <p>Mail: me@chleb.dev</p>
   </footer>
+
+  <script>
+    async function loadPage(page) {
+      const content = document.getElementById("content");
+      content.style.opacity = 0.3;
+
+      try {
+        const res = await fetch(`pages/${page}.html`);
+        if (!res.ok) throw new Error("Not found");
+        const html = await res.text();
+        content.innerHTML = html;
+      } catch {
+        content.innerHTML = "<p>Page not found.</p>";
+      }
+
+      content.style.opacity = 1;
+    }
+
+    document.querySelectorAll("a[data-page]").forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const page = link.dataset.page;
+        loadPage(page);
+        history.pushState({ page }, "", `#${page}`);
+      });
+    });
+
+    window.addEventListener("popstate", e => {
+      const page = e.state?.page || "home";
+      loadPage(page);
+    });
+
+    const startPage = location.hash.replace("#", "") || "home";
+    if (startPage !== "home") loadPage(startPage);
+  </script>
 </body>
 </html>
