@@ -37,7 +37,7 @@ header {
 
 aside {
     background-color: #111;
-    width: 15%;
+    width: 25%;
     padding: 20px;
     border-radius: 8px;
     margin-right: 20px;
@@ -45,7 +45,7 @@ aside {
 
 main {
     padding: 20px;
-    width: 84%;
+    width: 75%;
     background: linear-gradient(to right, #060606, #272727);
     border-radius: 8px;
 }
