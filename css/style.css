@@ -1,0 +1,69 @@
+body {
+  background: #0d0d0d;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background: linear-gradient(to right, #0f2db6, #4b9deb);
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+aside {
+  width: 200px;
+  background-color: #121212;
+  padding: 1rem;
+  border-right: 1px solid #1f1f1f;
+}
+
+.nav-link {
+  display: block;
+  color: #77aaff;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.card {
+  background: #1a1a1a;
+  border-left: 4px solid #4b9deb;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  padding: 1rem;
+  text-align: center;
+  background: #0d0d0d;
+  font-size: 0.9rem;
+  border-top: 1px solid #1f1f1f;
+}
