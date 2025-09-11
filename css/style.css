@@ -95,15 +95,16 @@ footer {
   .nav-link {
     display: block;
     width: 100%;              /* full width */
-    text-align: center;       /* center text */
-    margin-bottom: 0.5rem;    /* spacing between buttons */
-    padding: 1rem;            /* bigger tap area */
-    background: #121212;      /* button-like look */
+    box-sizing: border-box;   /* prevent overflow */
+    text-align: center;       
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    background: #121212;
     border-radius: 6px;
   }
 
   .nav-link:last-child {
-    margin-bottom: 0; /* no extra space under last button */
+    margin-bottom: 0;
   }
 
   main {
