@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Transit Map</title>
+<style>
+  body { background: #111; color: #fff; font-family: sans-serif; text-align: center; }
+  svg { margin-top: 20px; }
+  .station { cursor: pointer; transition: 0.3s; }
+  .station:hover { fill: #4b9deb; }
+  #info { margin-top: 20px; font-size: 1.2rem; }
+</style>
+</head>
+<body>
+
+<h1>Transit Map Demo</h1>
+
+<svg width="600" height="300">
+  <!-- Line -->
+  <line x1="50" y1="150" x2="550" y2="150" stroke="#4b9deb" stroke-width="6"/>
+
+  <!-- Stations -->
+  <circle class="station" id="A" cx="100" cy="150" r="12" fill="#fff" stroke="#4b9deb" stroke-width="3"/>
+  <text x="90" y="135" fill="#fff">A</text>
+
+  <circle class="station" id="B" cx="250" cy="150" r="12" fill="#fff" stroke="#4b9deb" stroke-width="3"/>
+  <text x="240" y="135" fill="#fff">B</text>
+
+  <circle class="station" id="C" cx="400" cy="150" r="12" fill="#fff" stroke="#4b9deb" stroke-width="3"/>
+  <text x="390" y="135" fill="#fff">C</text>
+
+  <circle class="station" id="D" cx="550" cy="150" r="12" fill="#fff" stroke="#4b9deb" stroke-width="3"/>
+  <text x="540" y="135" fill="#fff">D</text>
+</svg>
+
+<div id="info">Click a station...</div>
+
+<script>
+  const info = document.getElementById("info");
+  const stations = document.querySelectorAll(".station");
+
+  stations.forEach(station => {
+    station.addEventListener("click", () => {
+      info.textContent = "You clicked station " + station.id;
+    });
+  });
+</script>
+
+</body>
+</html>
