@@ -88,15 +88,22 @@ footer {
     width: 100%;
     border-right: none;
     border-bottom: 1px solid #1f1f1f;
-    display: flex;
-    justify-content: space-around; /* horizontal nav on mobile */
+    display: block; /* stack links vertically */
     padding: 0.5rem;
   }
 
   .nav-link {
-    padding: 0.5rem;
-    text-align: center;
-    flex: 1; /* evenly spaced buttons */
+    display: block;
+    width: 100%;              /* full width */
+    text-align: center;       /* center text */
+    margin-bottom: 0.5rem;    /* spacing between buttons */
+    padding: 1rem;            /* bigger tap area */
+    background: #121212;      /* button-like look */
+    border-radius: 6px;
+  }
+
+  .nav-link:last-child {
+    margin-bottom: 0; /* no extra space under last button */
   }
 
   main {
